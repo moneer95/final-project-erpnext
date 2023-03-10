@@ -1,0 +1,6 @@
+.DS_Store
+*.pyc
+*.egg-info
+*.swp
+tags
+erp_gsg/docs/current
