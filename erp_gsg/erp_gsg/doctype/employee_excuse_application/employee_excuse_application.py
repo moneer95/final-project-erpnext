@@ -18,15 +18,27 @@ class EmployeeExcuseApplication(Document):
 
 		diff_from_to = time_diff(self.to_time, self.from_time)
 
+
 		if current_month == excuse_month:
 			if diff_from_to > datetime.timedelta(0):
 				if datetime.timedelta(excuse_balance) >= excuse_hours:
 					# change the excuse_balance reference to time delta object
 					excuse_balance_timedelta = datetime.timedelta(hours=excuse_balance)
+					# subtract the balance
 					excuse_balance = excuse_balance_timedelta - excuse_hours
+					# convert to hours
 					excuse_balance = excuse_balance.total_seconds()/3600
-					frappe.get_doc("Employee", self.employee).excuse_hours_balance = float(excuse_balance)
-					frappe.msgprint(f'{excuse_balance}')
+					# assign value
+					#frappe.get_doc("Employee", self.employee).excuse_hours_balance = float(excuse_balance)
+					employee = frappe.get_doc("Employee", self.employee)
+					employee.set("excuse_hours_balance", float(excuse_balance))
+					employee.save(ignore_permissions=True)
+					frappe.db.commit()
+					# reload the Employee document to make sure changes are visible
+					employee.reload()
+
+					# check if the field has been updated
+					frappe.msgprint(f'excuse_hours_balance: {employee.excuse_hours_balance}')
 
 				else:
 					frappe.throw(f'your excuse balance is {excuse_balance} you exceeded it!')
