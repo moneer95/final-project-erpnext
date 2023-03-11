@@ -4,6 +4,8 @@
 
 frappe.query_reports["Attendance Working Hour"] = {
 	"filters": [
-
+		{"fieldname": 'department', 'label': 'Department', 'fieldtype': 'Link', 'options': 'Department'},
+		{"fieldname": 'employee_name', 'label': 'Employee Name', 'fieldtype': 'Data'},
+		{"fieldname": 'attendance_date', 'label': 'Attendance Date', 'fieldtype': 'Date'},
 	]
 };
