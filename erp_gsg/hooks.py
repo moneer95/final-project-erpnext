@@ -51,6 +51,10 @@ doc_events = {
 	}
 }
 
+override_whitelisted_modules = {
+    "erpnext.selling": "erp_gsg.erp_gsg"
+}
+
 # Home Pages
 # ----------
 
