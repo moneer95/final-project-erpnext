@@ -23,6 +23,9 @@ class ToWhomItConcerns(Document):
 
 		# Use the salary slip ID to get the Salary Slip document
 		salary_slip = frappe.get_doc("Salary Slip", salary_slip_id)
+		total_salary = 0
+		for earning in salary_slip.earnings:
+			total_salary += earning.amount
 
 		# assign
-		self.salary = salary_slip_id
+		self.salary = total_salary

@@ -47,7 +47,7 @@ before_install = 'erp_gsg.doc_event.add_templates_before_install.before_install'
 
 doc_events = {
 	"Material Request": {
-		"validate": "erp_gsg.erp_gsg.doc_event.material_new_stock_entry.make_stock_entry_after_material_request"
+		"on_submit": "erp_gsg.erp_gsg.doc_event.material_new_stock_entry.make_stock_entry_after_material_request"
 	}
 }
 
