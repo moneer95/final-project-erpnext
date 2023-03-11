@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+header{
+    background-image: url('../assets/company.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: flex-end;
+}
+header nav{
+    width: 100%;
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+header .logo{
+    width: 100px;
+}
+header ul{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    font-size: 18px;
+}
+header ul a{
+    text-decoration: none;
+    color: #fff;
+}
+
+section{
+    padding: 0 10%;
+}
+.head{
+    text-align: center;
+    width: 80%;
+    margin: 50px auto;
+}
+.head p{
+    color: rgb(82, 82, 82);
+}
+.employees .line{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 30px;
+}
+.employees .line .employee{
+    display: flex;
+    gap: 16px;
+}
+.employees .line img{
+    width: 170px;
+}
+.employees .line h3{
+    font-size: 18px;
+    color: green
+}
+.employees .line p{
+    font-size: 14px;
+}
+.employees .line span{
+    font-size: 14px;
+    color: rgb(248, 3, 68);
+    font-weight: bold; 
+}
+
+.separator{
+    background-image: url('../assets/company.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 150px;
+}
+
+.history{
+    display: flex;
+    gap: 50px;
+    margin: 50px 0;
+}
+.history img{
+    width: 120%;
+    height: 200px;
+}
+.history h3{
+    font-size: 18px;
+    color: green
+}
